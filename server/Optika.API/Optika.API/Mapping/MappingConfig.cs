@@ -8,10 +8,13 @@ namespace Optika.API.Mapping
     {
         public static void RegisterMappings()
         {
-            TypeAdapterConfig<ProductCreateDto, Product>.NewConfig()
-                .Map(dest => dest.IsActive, src => true)
-                .Ignore(dest => dest.Id)
-                .Ignore(dest => dest.CreatedAt);
+            TypeAdapterConfig<UserCreateDto, User>.NewConfig();
+            TypeAdapterConfig<BrandCreateDto, Brand>.NewConfig();
+            TypeAdapterConfig<CategoryCreateDto, Category>.NewConfig();
+            TypeAdapterConfig<ProductCreateDto, Product>.NewConfig();
+            TypeAdapterConfig<OrderCreateDto, Order>.NewConfig();
+            TypeAdapterConfig<OrderItemCreateDto, OrderItem>.NewConfig();
+            TypeAdapterConfig<ReviewCreateDto, Review>.NewConfig();
         }
     }
 }

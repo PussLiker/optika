@@ -2,6 +2,9 @@
 using Optika.API.Services;
 using Optika.API.Data;
 using Microsoft.EntityFrameworkCore;
+using Optika.API.DTOs;
+using Optika.API.Entities;
+using Optika.API.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +20,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Подключаем слои репозиториев и сервисов
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IService<Product, ProductCreateDto>, GenericService<Product, ProductCreateDto>>();
+builder.Services.AddScoped<IService<Category, CategoryCreateDto>, GenericService<Category, CategoryCreateDto>>();
+builder.Services.AddScoped<IService<Brand, BrandCreateDto>, GenericService<Brand, BrandCreateDto>>();
+builder.Services.AddScoped<IService<User, UserCreateDto>, GenericService<User, UserCreateDto>>();
+builder.Services.AddScoped<IService<Review, ReviewCreateDto>, GenericService<Review, ReviewCreateDto>>();
+builder.Services.AddScoped<IService<OrderItem, OrderItemCreateDto>, GenericService<OrderItem, OrderItemCreateDto>>();
+builder.Services.AddScoped<IService<Order, OrderCreateDto>, GenericService<Order, OrderCreateDto>>();
+
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<,>), typeof(GenericService<,>));
@@ -31,6 +40,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// регистрация маппинга
+MappingConfig.RegisterMappings();
 
 // HTTPS редирект (http → https)
 app.UseHttpsRedirection();

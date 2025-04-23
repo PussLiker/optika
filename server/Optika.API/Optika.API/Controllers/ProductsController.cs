@@ -1,58 +1,81 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Optika.API.Data;
-using Optika.API.Services;
-using Optika.API.Entities;
 using Optika.API.DTOs;
+using Optika.API.Entities;
+using Optika.API.Services;
+using Mapster;
 
 namespace Optika.API.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-        private readonly IService<Product, ProductCreateDto> _service;
+        private readonly IService<Product, ProductCreateDto> _productService;
 
-        public ProductsController(IService<Product, ProductCreateDto> service)
+        public ProductController(IService<Product, ProductCreateDto> productService)
         {
-            _service = service;
+            _productService = productService;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Product>> Create([FromBody] ProductCreateDto dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var created = await _service.CreateAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created); }
-
+        // 1. Получить все продукты
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAll()
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetAllAsync()
         {
-            var products = await _service.GetAllAsync();
+            var products = await _productService.GetAllAsync();
             return Ok(products);
         }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetById(int id)
+
+        // 2. Получить продукт по ID
+        [HttpGet("{id}", Name = "GetProductById")]
+        public async Task<ActionResult<ProductDto>> GetByIdAsync(int id)
         {
-            var product = await _service.GetByIdAsync(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product == null)
                 return NotFound();
-            return Ok(product);
+
+            var dto = product.Adapt<ProductDto>();
+            return Ok(dto);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Product>> Update(int id, [FromBody] ProductCreateDto dto)
+        // 3. Создать новый продукт
+        [HttpPost]
+        public async Task<ActionResult<ProductDto>> CreateAsync([FromBody] ProductCreateDto createDto)
         {
-            var updatedProduct = await _service.UpdateAsync(id, dto);
-            return Ok(updatedProduct);
+            var created = await _productService.CreateAsync(createDto);
+            var dto = created.Adapt<ProductDto>();
+
+            return CreatedAtRoute(
+                routeName: "GetProductById",
+                routeValues: new { id = created.Id },
+                value: dto
+            );
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+
+        // 4. Обновить продукт
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ProductDto>> UpdateAsync(int id, [FromBody] ProductCreateDto updateDto)
         {
-            await _service.DeleteAsync(id);
-            return NoContent();
+            var updated = await _productService.UpdateAsync(id, updateDto);
+            if (updated == null)
+                return NotFound();
+
+            var dto = updated.Adapt<ProductDto>();
+            return Ok(dto);
+        }
+
+        // 5. Удалить продукт
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            try
+            {
+                await _productService.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
         }
     }
 }

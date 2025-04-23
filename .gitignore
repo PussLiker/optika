@@ -61,5 +61,11 @@ server/Optika.API/.vs/
 # System
 *.log
 *.tmp
+# .NET build artifacts
+**/bin/
+**/obj/
 *.DS_Store
 .metadata
+/server/Optika.API/.vs
+/server/Optika.API/.vs
+/server/Optika.API/.vs/Optika.API
