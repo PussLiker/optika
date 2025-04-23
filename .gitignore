@@ -52,11 +52,11 @@ client/.packages
 client/pubspec.lock
 
 # ASP.NET Core
-server/Optika.API/bin/
-server/Optika.API/obj/
-server/.vs/
-server/Optika.API/appsettings.Development.json
-server/Optika.API/appsettings.json
+server/Optika.API/Optika.API/bin/
+server/Optika.API/Optika.API/obj/
+server/Optika.API/Optika.API/appsettings.Development.json
+server/Optika.API/Optika.API/appsettings.json
+server/Optika.API/.vs/
 
 # System
 *.log
