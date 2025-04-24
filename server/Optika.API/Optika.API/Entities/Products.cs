@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Optika.API.Entities
 {
-    public class Product
+    public class Products
     {
         public int Id { get; set; }
 

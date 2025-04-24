@@ -11,7 +11,8 @@ namespace Optika.API.Entities
 
         public string? Description { get; set; }
 
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public ICollection<Products> Products { get; set; } = new List<Products>();
 
     }
 }
+

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "I/hA940W8Mo=",
+  "dgSpecHash": "cKcXMZwhAq0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Optika.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Timosha\\.nuget\\packages\\htmlagilitypack\\1.12.1\\htmlagilitypack.1.12.1.nupkg.sha512",
     "C:\\Users\\Timosha\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Timosha\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
     "C:\\Users\\Timosha\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",

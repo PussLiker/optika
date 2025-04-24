@@ -12,7 +12,7 @@ namespace Optika.API.Entities
         [MaxLength(100)]
         public string? Country { get; set; }
 
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public ICollection<Products> Products { get; set; } = new List<Products>();
 
     }
 }

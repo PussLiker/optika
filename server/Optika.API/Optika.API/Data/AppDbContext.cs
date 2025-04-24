@@ -8,7 +8,7 @@ namespace Optika.API.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         // Таблицы
-        public DbSet<Product> Products => Set<Product>();
+        public DbSet<Products> Products => Set<Products>();
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<Brand> Brands => Set<Brand>();
         public DbSet<Order> Orders => Set<Order>();
@@ -21,7 +21,7 @@ namespace Optika.API.Data
             base.OnModelCreating(modelBuilder);
 
             // Конфигурация для Product
-            modelBuilder.Entity<Product>(entity =>
+            modelBuilder.Entity<Products>(entity =>
             {
                 entity.HasKey(p => p.Id);
                 entity.Property(p => p.Name).IsRequired().HasMaxLength(100);

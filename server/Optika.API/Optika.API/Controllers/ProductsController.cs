@@ -10,9 +10,9 @@ namespace Optika.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IService<Product, ProductCreateDto> _productService;
+        private readonly IService<Products, ProductCreateDto> _productService;
 
-        public ProductController(IService<Product, ProductCreateDto> productService)
+        public ProductController(IService<Products, ProductCreateDto> productService)
         {
             _productService = productService;
         }

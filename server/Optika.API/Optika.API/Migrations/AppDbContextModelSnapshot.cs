@@ -126,7 +126,7 @@ namespace Optika.API.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("Optika.API.Entities.Product", b =>
+            modelBuilder.Entity("Optika.API.Entities.Products", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -277,7 +277,7 @@ namespace Optika.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Optika.API.Entities.Product", "Product")
+                    b.HasOne("Optika.API.Entities.Products", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -288,7 +288,7 @@ namespace Optika.API.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Optika.API.Entities.Product", b =>
+            modelBuilder.Entity("Optika.API.Entities.Products", b =>
                 {
                     b.HasOne("Optika.API.Entities.Brand", "Brand")
                         .WithMany("Products")
@@ -309,7 +309,7 @@ namespace Optika.API.Migrations
 
             modelBuilder.Entity("Optika.API.Entities.Review", b =>
                 {
-                    b.HasOne("Optika.API.Entities.Product", "Product")
+                    b.HasOne("Optika.API.Entities.Products", "Product")
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -341,7 +341,7 @@ namespace Optika.API.Migrations
                     b.Navigation("Items");
                 });
 
-            modelBuilder.Entity("Optika.API.Entities.Product", b =>
+            modelBuilder.Entity("Optika.API.Entities.Products", b =>
                 {
                     b.Navigation("OrderItems");
 
