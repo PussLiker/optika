@@ -12,6 +12,7 @@ namespace Optika.API.Services
         private readonly AppDbContext _db;
         private readonly ILogger<ProductParserService> _logger;
         private readonly HttpClient _httpClient;
+        private readonly Dictionary<string, Brand> _brandsCache = new();
 
         private readonly List<(string CategoryName, string Url)> _categorySources = new()
         {
@@ -86,13 +87,24 @@ namespace Optika.API.Services
             {
                 try
                 {
-                    var product = ParseProductNode(node, categoryId);
+                    var product = await ParseProductNode(node, categoryId);
                     if (product == null) continue;
 
-                    if (!await _db.Products.AnyAsync(p => p.Name == product.Name && p.BrandId == product.BrandId))
+                    // Проверяем дубликаты по названию+бренду ИЛИ по изображению
+                    bool exists = await _db.Products.AnyAsync(p =>
+                        (p.Name == product.Name && p.BrandId == product.BrandId) ||
+                        (!string.IsNullOrEmpty(product.ImageUrl) &&
+                         !string.IsNullOrEmpty(p.ImageUrl) &&
+                         p.ImageUrl == product.ImageUrl));
+
+                    if (!exists)
                     {
                         await _db.Products.AddAsync(product);
                         _logger.LogInformation("Добавлен товар: {Name}", product.Name);
+                    }
+                    else
+                    {
+                        _logger.LogInformation("Товар {Name} уже существует, пропускаем", product.Name);
                     }
                 }
                 catch (Exception ex)
@@ -102,30 +114,49 @@ namespace Optika.API.Services
             }
             await _db.SaveChangesAsync();
         }
+        private async Task<bool> ProductWithImageExistsAsync(string imageUrl)
+        {
+            if (string.IsNullOrEmpty(imageUrl))
+                return false;
 
-        private Products ParseProductNode(HtmlNode node, int categoryId)
+            try
+            {
+                var imageBytes = await _httpClient.GetByteArrayAsync(imageUrl);
+                var imageHash = BitConverter.ToString(
+                    System.Security.Cryptography.MD5.HashData(imageBytes)
+                ).Replace("-", "").ToLower();
+
+                var extension = Path.GetExtension(imageUrl)?.Split('?').First() ?? ".jpg";
+                var fileName = $"{imageHash}{extension}";
+
+                return await _db.Products.AnyAsync(p => p.ImageUrl == $"/images/{fileName}");
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private async Task<Products> ParseProductNode(HtmlNode node, int categoryId)
         {
             var isLensCategory = categoryId == _db.Categories.First(c => c.Name == "Контактные линзы").Id;
 
             return isLensCategory
-                ? ParseLensNode(node, categoryId)
-                : ParseGlassesNode(node, categoryId);
+                ? await ParseLensNode(node, categoryId)
+                : await ParseGlassesNode(node, categoryId);
         }
 
-        private Products ParseGlassesNode(HtmlNode node, int categoryId)
+        private async Task<Products> ParseGlassesNode(HtmlNode node, int categoryId)
         {
             var linkNode = node.SelectSingleNode(".//a[contains(@class, 'product-card')]");
             if (linkNode == null) return null;
 
-            // Получаем полный URL товара
             var relativeUrl = linkNode.GetAttributeValue("href", "");
             var productUrl = $"https://www.optic-city.ru{relativeUrl.TrimStart('/')}";
-            // Бренд и номер модели
+
             var titleNode = linkNode.SelectSingleNode(".//div[contains(@class, 'product-card__title')]");
             var brandName = titleNode?.SelectSingleNode(".//span[contains(@class, 'product-card__name')]")?.InnerText.Trim();
             var modelNumber = titleNode?.SelectSingleNode(".//span[contains(@class, 'product-card__id')]")?.InnerText.Trim();
 
-            // Остальные данные
             var priceNode = linkNode.SelectSingleNode(".//span[contains(@class, 'product-card__price')]");
             var imgNode = linkNode.SelectSingleNode(".//img[contains(@class, 'product-card__photo--current')]");
 
@@ -135,7 +166,6 @@ namespace Optika.API.Services
                 return null;
             }
 
-            // Обработка цены
             var priceText = priceNode.InnerText.Replace("Р", "").Replace(" ", "").Trim();
             if (!decimal.TryParse(priceText, NumberStyles.Any, CultureInfo.InvariantCulture, out var price))
             {
@@ -143,22 +173,25 @@ namespace Optika.API.Services
                 return null;
             }
 
-            // Бренд
             var brand = GetOrCreateBrand(brandName ?? "Unknown");
+            var savedImagePath = await DownloadAndSaveImageAsync(
+                imgNode?.GetAttributeValue("src", null),
+                modelNumber
+            );
 
             return new Products
             {
-                Name = modelNumber, // Используем номер модели как Name
-                Description = productUrl, // Полное название в описание
+                Name = modelNumber,
+                Description = productUrl,
                 Price = price,
-                ImageUrl = imgNode?.GetAttributeValue("src", null),
+                ImageUrl = savedImagePath,
                 BrandId = brand.Id,
                 CategoryId = categoryId,
                 CreatedAt = DateTime.UtcNow
             };
         }
 
-        private Products ParseLensNode(HtmlNode node, int categoryId)
+        private async Task<Products> ParseLensNode(HtmlNode node, int categoryId)
         {
             try
             {
@@ -169,11 +202,9 @@ namespace Optika.API.Services
                     return null;
                 }
 
-                // Получаем полный URL товара
                 var relativeUrl = linkNode.GetAttributeValue("href", "");
                 var productUrl = $"https://www.optic-city.ru{relativeUrl.TrimStart('/')}";
 
-                // Извлекаем название модели и бренд
                 var titleNode = linkNode.SelectSingleNode(".//div[contains(@class, 'product-card__title')]");
                 var modelName = titleNode?.SelectSingleNode(".//span[contains(@class, 'product-card__name')]")?.InnerText.Trim();
                 var brandName = titleNode?.SelectSingleNode(".//span[contains(@class, 'product-card__id')]")?.InnerText.Trim();
@@ -184,7 +215,6 @@ namespace Optika.API.Services
                     return null;
                 }
 
-                // Извлекаем цену
                 var priceNode = linkNode.SelectSingleNode(".//span[contains(@class, 'product-card__prices--current')]");
                 var priceText = priceNode?.InnerText?
                     .Replace("р", "")
@@ -198,14 +228,12 @@ namespace Optika.API.Services
                     return null;
                 }
 
-                // Извлекаем изображение
                 var imgNode = linkNode.SelectSingleNode(".//img[contains(@class, 'product-card__photo--current')]");
-                var imageUrl = imgNode?.GetAttributeValue("src", null);
+                var savedImagePath = await DownloadAndSaveImageAsync(
+                    imgNode?.GetAttributeValue("src", null),
+                    modelName
+                );
 
-                // Определяем тип линз
-                var lensType = modelName.Contains("1-Day") ? "Однодневные" : "Плановой замены";
-
-                // Создаём или получаем бренд
                 var brand = GetOrCreateBrand(brandName ?? "Unknown");
 
                 return new Products
@@ -213,12 +241,12 @@ namespace Optika.API.Services
                     Name = modelName,
                     Description = productUrl,
                     Price = price,
-                    ImageUrl = imageUrl,
+                    ImageUrl = savedImagePath,
                     BrandId = brand.Id,
                     CategoryId = categoryId,
-                    CreatedAt = DateTime.UtcNow,
-
-                }; }
+                    CreatedAt = DateTime.UtcNow
+                };
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Ошибка парсинга линз");
@@ -244,14 +272,55 @@ namespace Optika.API.Services
 
         private Brand GetOrCreateBrand(string brandName)
         {
+            if (_brandsCache.TryGetValue(brandName, out var cachedBrand))
+                return cachedBrand;
+
             var brand = _db.Brands.FirstOrDefault(b => b.Name == brandName);
             if (brand == null)
             {
                 brand = new Brand { Name = brandName };
                 _db.Brands.Add(brand);
-                _db.SaveChanges(); // Сохраняем сразу, чтобы получить ID
+                _db.SaveChanges();
             }
+
+            _brandsCache[brandName] = brand;
             return brand;
+        }
+
+        private async Task<string?> DownloadAndSaveImageAsync(string? imageUrl, string productName)
+        {
+            if (string.IsNullOrEmpty(imageUrl))
+                return null;
+
+            try
+            {
+                // Получаем хеш изображения для уникального имени файла
+                var imageBytes = await _httpClient.GetByteArrayAsync(imageUrl);
+                var imageHash = BitConverter.ToString(
+                    System.Security.Cryptography.MD5.HashData(imageBytes)
+                ).Replace("-", "").ToLower();
+
+                var extension = Path.GetExtension(imageUrl)?.Split('?').First() ?? ".jpg";
+                var fileName = $"{imageHash}{extension}";
+                var savePath = Path.Combine("wwwroot", "images", fileName);
+
+                // Если файл уже существует - возвращаем существующий путь
+                if (File.Exists(savePath))
+                {
+                    return $"/images/{fileName}";
+                }
+
+                // Сохраняем новое изображение
+                Directory.CreateDirectory(Path.Combine("wwwroot", "images"));
+                await File.WriteAllBytesAsync(savePath, imageBytes);
+
+                return $"/images/{fileName}";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка загрузки изображения для товара {ProductName}", productName);
+                return null;
+            }
         }
     }
 }

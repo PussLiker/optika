@@ -16,7 +16,7 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
+client/.idea/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -57,6 +57,8 @@ server/Optika.API/Optika.API/obj/
 server/Optika.API/Optika.API/appsettings.Development.json
 server/Optika.API/Optika.API/appsettings.json
 server/Optika.API/.vs/
+wwwroot/images/*
+!wwwroot/images/.gitkeep
 
 # System
 *.log
@@ -65,7 +67,7 @@ server/Optika.API/.vs/
 **/bin/
 **/obj/
 *.DS_Store
-.metadata
+client/.metadata
 server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2
 server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2
 server/Optika.API/.vs/Optika.API/v17/.suo
@@ -73,3 +75,11 @@ server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2
 server/Optika.API/.vs/Optika.API/v17/.suo
 server/Optika.API/.vs/Optika.API/v17/DocumentLayout.json
 server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2
+/client/macos
+/client/ios
+/client/linux
+/client/web
+/client/windows
+/server/Optika.API/Optika.API/obj
+server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs
+/server/Optika.API/Optika.API/wwwroot/images

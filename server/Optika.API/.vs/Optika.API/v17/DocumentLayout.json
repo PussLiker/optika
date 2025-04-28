@@ -3,148 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\mapping\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\mapping\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\ordercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\ordercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\orderitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\orderitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\services\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\services\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\brandcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\brandcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\entities\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\entities\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\parser\\productparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\parser\\productparserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\parser\\iproductparserservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\parser\\iproductparserservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\categorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\dtos\\brandcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\dtos\\brandcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\mapping\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\mapping\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\parsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\parsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|c:\\users\\timosha\\studioprojects\\optika\\server\\optika.api\\optika.api\\optika.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{759F1CFA-9334-41F6-B2F7-C5F2134A7727}|Optika.API\\Optika.API.csproj|solutionrelative:optika.api\\optika.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,388 +94,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\BrandController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:46:12.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T20:14:37.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderItemController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\OrderItemController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\OrderItemController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\OrderItemController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\OrderItemController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAxwFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:44:02.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\User.cs",
-              "RelativeToolTip": "Optika.API\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T18:31:19.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Entities\\Product.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Product.cs",
-              "RelativeToolTip": "Optika.API\\Entities\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:39:08.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\ReviewController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:45:25.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:41:17.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:39:24.703Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Optika.API\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T12:50:56.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Program.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Program.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Program.cs",
-              "RelativeToolTip": "Optika.API\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:52:47.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MappingConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Mapping\\MappingConfig.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Mapping\\MappingConfig.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Mapping\\MappingConfig.cs",
-              "RelativeToolTip": "Optika.API\\Mapping\\MappingConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:36:34.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OrderItemCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderItemCreateDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\OrderItemCreateDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderItemCreateDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\OrderItemCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:42:44.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "OrderCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderCreateDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\OrderCreateDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderCreateDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\OrderCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:42:17.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ReviewDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ReviewDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ReviewDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ReviewDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\ReviewDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:30:16.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IService.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\IService.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Services\\IService.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\IService.cs",
-              "RelativeToolTip": "Optika.API\\Services\\IService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T15:56:41.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GenericService.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\GenericService.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Services\\GenericService.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\GenericService.cs",
-              "RelativeToolTip": "Optika.API\\Services\\GenericService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T15:57:50.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ReviewCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ReviewCreateDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ReviewCreateDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ReviewCreateDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\ReviewCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:29:55.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "OrderItemDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderItemDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\OrderItemDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderItemDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\OrderItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:29:30.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "OrderDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\OrderDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\OrderDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\OrderDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:28:59.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BrandCreateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandCreateDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\BrandCreateDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandCreateDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\BrandCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:28:34.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BrandDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\BrandDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\BrandDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:28:11.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CategoryDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\CategoryDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\CategoryDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:27:43.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CategoryCreateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryCreateDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\CategoryCreateDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryCreateDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\CategoryCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:26:51.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProductDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductDTO.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ProductDTO.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductDTO.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\ProductDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:26:27.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\UserDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\UserDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\UserDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T20:11:56.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Optika.API\\Entities\\Category.cs",
               "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Category.cs",
               "RelativeToolTip": "Optika.API\\Entities\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:18:28.828Z",
+              "WhenOpened": "2025-04-27T18:42:57.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Review.cs",
-              "RelativeToolTip": "Optika.API\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:17:46.084Z",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Optika.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Optika.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-27T17:26:57.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UserCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\UserCreateDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\UserCreateDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\UserCreateDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\UserCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Program.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Program.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Program.cs",
+              "RelativeToolTip": "Optika.API\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T20:16:12.837Z",
+              "WhenOpened": "2025-04-24T14:38:54.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ProductCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductCreateDto.cs",
-              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ProductCreateDto.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductCreateDto.cs",
-              "RelativeToolTip": "Optika.API\\DTOs\\ProductCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Order.cs",
+              "RelativeToolTip": "Optika.API\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T13:19:53.773Z",
+              "WhenOpened": "2025-04-24T14:48:12.644Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 1,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\OrderItem.cs",
               "RelativeDocumentMoniker": "Optika.API\\Entities\\OrderItem.cs",
@@ -543,86 +158,207 @@
               "RelativeToolTip": "Optika.API\\Entities\\OrderItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T18:41:32.28Z",
+              "WhenOpened": "2025-04-24T14:48:18.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Order.cs",
-              "RelativeToolTip": "Optika.API\\Entities\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ProductCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductCreateDto.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ProductCreateDto.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductCreateDto.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\ProductCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T18:37:34.686Z",
+              "WhenOpened": "2025-04-27T17:03:28.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Brand.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Brand.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Entities\\Brand.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Brand.cs",
-              "RelativeToolTip": "Optika.API\\Entities\\Brand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\ProductDTO.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\ProductDTO.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\ProductDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:18:11.287Z",
+              "WhenOpened": "2025-04-27T17:03:26.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Optika.API\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T15:55:32.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Repositories\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "Optika.API\\Repositories\\IRepository.cs",
+              "DocumentIndex": 7,
+              "Title": "CategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryDTO.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\CategoryDTO.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryDTO.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\CategoryDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T15:54:32.302Z",
+              "WhenOpened": "2025-04-27T17:03:19.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Optika.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\appsettings.json",
-              "RelativeToolTip": "Optika.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-23T19:35:32.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Optika.API\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Optika.API\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAuwE0AAAAPAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "BrandDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandDTO.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\BrandDTO.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandDTO.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\BrandDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T13:25:09.188Z",
+              "WhenOpened": "2025-04-27T17:03:15.498Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GenericService.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\GenericService.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Services\\GenericService.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Services\\GenericService.cs",
+              "RelativeToolTip": "Optika.API\\Services\\GenericService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T11:56:22.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IProductParserService .cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Parser\\IProductParserService .cs",
+              "RelativeDocumentMoniker": "Optika.API\\Parser\\IProductParserService .cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Parser\\IProductParserService .cs",
+              "RelativeToolTip": "Optika.API\\Parser\\IProductParserService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T16:10:44.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductParserService.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Parser\\ProductParserService.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Parser\\ProductParserService.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Parser\\ProductParserService.cs",
+              "RelativeToolTip": "Optika.API\\Parser\\ProductParserService.cs",
+              "ViewState": "AgIAABoBAAAAAAAAAAAkwEMBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T15:09:38.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CategoryCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryCreateDTO.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\CategoryCreateDTO.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\CategoryCreateDTO.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\CategoryCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T11:56:04.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Optika.API\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T11:55:26.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BrandCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandCreateDTO.cs",
+              "RelativeDocumentMoniker": "Optika.API\\DTOs\\BrandCreateDTO.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\DTOs\\BrandCreateDTO.cs",
+              "RelativeToolTip": "Optika.API\\DTOs\\BrandCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T14:43:53.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Products.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Entities\\Products.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Entities\\Products.cs",
+              "RelativeToolTip": "Optika.API\\Entities\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T14:48:24.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Optika.API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T16:15:11.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BrandController.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\BrandController.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Controllers\\BrandController.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\BrandController.cs",
+              "RelativeToolTip": "Optika.API\\Controllers\\BrandController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwEIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T14:43:58.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MappingConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Mapping\\MappingConfig.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Mapping\\MappingConfig.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Mapping\\MappingConfig.cs",
+              "RelativeToolTip": "Optika.API\\Mapping\\MappingConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T14:46:00.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ParseController.cs",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ParseController.cs",
+              "RelativeDocumentMoniker": "Optika.API\\Controllers\\ParseController.cs",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Controllers\\ParseController.cs",
+              "RelativeToolTip": "Optika.API\\Controllers\\ParseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T15:44:36.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Optika.API.http",
+              "DocumentMoniker": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Optika.API.http",
+              "RelativeDocumentMoniker": "Optika.API\\Optika.API.http",
+              "ToolTip": "C:\\Users\\Timosha\\StudioProjects\\optika\\server\\Optika.API\\Optika.API\\Optika.API.http",
+              "RelativeToolTip": "Optika.API\\Optika.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-04-24T15:46:04.122Z"
             }
           ]
         }

@@ -53,7 +53,8 @@ if (app.Environment.IsDevelopment())
 using var scope = app.Services.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-
+//загрузка картинок
+app.UseStaticFiles();
 
 // регистрация маппинга
 MappingConfig.RegisterMappings();
