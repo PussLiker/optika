@@ -10,41 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c2d007-4357-4f63-b9cc-16a6eeea3e5c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/lib/models/brand.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/models/product.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/pages/home_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/lib/services/api_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/widget_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/analysis_options.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/pmc/gamedev/optika/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/kotlin/pmc/gamedev/optika/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable-v21/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/drawable-v21/launch_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/values-night/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/values-night/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/services/api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/services/api_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Optika.API.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Optika.API.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Parser/ProductParserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Parser/ProductParserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/staticwebassets.removed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/staticwebassets.removed.txt" afterDir="false" />
@@ -66,6 +37,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/lib/pages/home_screen.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/client/lib/services/api_service.dart" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -94,8 +69,8 @@
     "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Timosha/StudioProjects/optika",
-    "settings.editor.selected.configurable": "flutter.settings",
+    "last_opened_file_path": "C:/Users/Timosha/flutter/bin/cache/dart-sdk",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>

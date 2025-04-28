@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'services/api_service.dart';
-import 'models/product.dart';
 import 'pages/home_screen.dart';
 
 void main() {

@@ -4,7 +4,7 @@ import 'package:optika/models/brand.dart';
 import 'package:optika/models/product.dart';
 
 class ApiService {
-  final String baseUrl = 'http://192.168.0.42:5197/api';
+  final String baseUrl = 'http://192.168.0.14:5197/api';
 
   // Метод для получения списка брендов
   Future<List<Brand>> getBrands() async {

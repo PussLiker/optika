@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:optika/services/api_service.dart';
 import 'package:optika/models/product.dart';
-import 'package:optika/models/brand.dart';
 
 class CatalogScreen extends StatefulWidget {
   @override
@@ -23,7 +22,11 @@ class _CatalogScreenState extends State<CatalogScreen> {
   }
 
   void _scrollToTop() {
-    _scrollController.jumpTo(0);
+    _scrollController.animateTo(
+      0,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeOut,
+    );
   }
 
   @override
@@ -32,7 +35,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Каталог', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-        backgroundColor: Colors.green,
+        backgroundColor: Color(0xFF800020),
         foregroundColor: Colors.white,
         centerTitle: false, // Центрируем заголовок
 
@@ -67,8 +70,9 @@ class _CatalogScreenState extends State<CatalogScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _scrollToTop,
-        child: Icon(Icons.arrow_upward, color: Colors.black),
-        backgroundColor: Colors.green,
+        child: Icon(Icons.arrow_upward, color: Colors.white),
+        backgroundColor: Color(0xFF660000),
+        mini: true,
       ),
     );
   }
@@ -117,7 +121,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
-                'http://192.168.0.42:5197${product.imageUrl}',
+                'http://192.168.0.14:5197${product.imageUrl}',
                 height: 108,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -154,7 +158,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                 SizedBox(height: 4),
                 Text(
                   '${product.price.toStringAsFixed(2)} руб',
-                  style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, height: 1.1),
+                  style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold, height: 1.1),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -168,13 +172,16 @@ class _CatalogScreenState extends State<CatalogScreen> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Color(0xFF31A82A),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   padding: EdgeInsets.symmetric(vertical: 4, horizontal: 0), // Высота кнопки увеличена
                 ),
                 child: Text(
-                  'Добавить\nв корзину',
-                  style: TextStyle(color: Colors.white),
+                  'В корзину',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
