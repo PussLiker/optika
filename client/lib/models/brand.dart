@@ -17,4 +17,13 @@ class Brand {
       country: json['country'],
     );
   }
+
+  // Метод для преобразования объекта в JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'country': country,
+    };
+  }
 }

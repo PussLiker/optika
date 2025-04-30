@@ -7,7 +7,8 @@ class Product {
   final double price;
   final String? imageUrl;
   final int brandId; // ID бренда
-  final Brand? brand; // Объект бренда
+  Brand? brand; // Объект бренда
+  int quantity = 0;
   final int categoryId;
   final bool isActive;
   final DateTime createdAt;

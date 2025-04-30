@@ -2,13 +2,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:optika/models/brand.dart';
 import 'package:optika/models/product.dart';
+import 'package:optika/services/api_config.dart';
 
 class ApiService {
-  final String baseUrl = 'http://192.168.0.14:5197/api';
-
   // Метод для получения списка брендов
   Future<List<Brand>> getBrands() async {
-    final response = await http.get(Uri.parse('$baseUrl/Brand'));
+    final response = await http.get(Uri.parse('${ApiConfig.baseUrl}/api/Brand'));
 
     if (response.statusCode == 200) {
       List<dynamic> data = json.decode(response.body);
@@ -20,20 +19,22 @@ class ApiService {
 
   // Метод для получения списка товаров с подгрузкой бренда
   Future<List<Product>> getProducts() async {
-    final response = await http.get(Uri.parse('$baseUrl/Product'));
+    final response = await http.get(Uri.parse('${ApiConfig.baseUrl}/api/Product'));
 
     if (response.statusCode == 200) {
       List<dynamic> data = json.decode(response.body);
 
-      // Получаем список брендов (для связывания с товарами)
+      // Загружаем список брендов
       List<Brand> brands = await getBrands();
 
       return data.map((item) {
-        // Находим бренд по ID
-        Brand? brand = brands.firstWhere((b) => b.id == item['brandId']);
+        // Преобразуем каждый товар из JSON в объект Product
+        Product product = Product.fromJson(item);
 
-        // Создаем объект Product с брендом
-        return Product.fromJson(item, brand: brand);
+        // Находим бренд по ID
+        product.brand = brands.firstWhere((brand) => brand.id == product.brandId, orElse: () => Brand(id: 0, name: 'Неизвестный бренд'));
+
+        return product;
       }).toList();
     } else {
       throw Exception('Failed to load products');
