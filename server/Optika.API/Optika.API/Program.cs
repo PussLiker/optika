@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Optika.API.DTOs;
 using Optika.API.Entities;
 using Optika.API.Mapping;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,24 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<,>), typeof(GenericService<,>));
 
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            )
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 
 
@@ -67,6 +87,9 @@ app.UseAuthorization();
 
 // Маршрутизация контроллеров
 app.MapControllers();
+
+app.UseAuthentication(); // обязательно до UseAuthorization
+app.UseAuthorization();
 
 // Регистрируем маппинги (например, AutoMapper)
 Optika.API.Mapping.MappingConfig.RegisterMappings();

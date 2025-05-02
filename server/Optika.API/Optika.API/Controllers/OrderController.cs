@@ -10,9 +10,9 @@ namespace Optika.API.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly IService<Order, OrderCreateDto> _orderService;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IService<Order, OrderCreateDto> orderService)
+        public OrderController(IOrderService orderService)
         {
             _orderService = orderService;
         }
@@ -41,7 +41,9 @@ namespace Optika.API.Controllers
         [HttpPost]
         public async Task<ActionResult<OrderDto>> CreateAsync([FromBody] OrderCreateDto createDto)
         {
-            var created = await _orderService.CreateAsync(createDto);
+            var userId = int.Parse(User.FindFirst("id")!.Value); // достаём ID из токена
+
+            var created = await _orderService.CreateAsync(userId, createDto);
             var dto = created.Adapt<OrderDto>();
 
             return CreatedAtRoute(

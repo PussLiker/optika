@@ -10,7 +10,6 @@ class Product {
   Brand? brand; // Объект бренда
   int quantity = 0;
   final int categoryId;
-  final bool isActive;
   final DateTime createdAt;
 
   Product({
@@ -22,7 +21,6 @@ class Product {
     required this.brandId,
     this.brand, // Добавляем объект бренда
     required this.categoryId,
-    required this.isActive,
     required this.createdAt,
   });
 
@@ -37,7 +35,6 @@ class Product {
       brandId: json['brandId'],
       brand: brand, // Передаем объект бренда
       categoryId: json['categoryId'],
-      isActive: json['isActive'],
       createdAt: DateTime.parse(json['createdAt']),
     );
   }
@@ -52,7 +49,6 @@ class Product {
       'imageUrl': imageUrl,
       'brandId': brandId,
       'categoryId': categoryId,
-      'isActive': isActive,
       'createdAt': createdAt.toIso8601String(),
     };
   }

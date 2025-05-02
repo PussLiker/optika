@@ -4,6 +4,7 @@ import 'package:optika/models/brand.dart';
 import 'package:optika/models/product.dart';
 import 'package:optika/services/api_config.dart';
 
+
 class ApiService {
   // Метод для получения списка брендов
   Future<List<Brand>> getBrands() async {
@@ -16,6 +17,7 @@ class ApiService {
       throw Exception('Failed to load brands');
     }
   }
+
 
   // Метод для получения списка товаров с подгрузкой бренда
   Future<List<Product>> getProducts() async {

@@ -5,9 +5,6 @@ namespace Optika.API.DTOs
     public class OrderCreateDto
     {
         [Required]
-        public int UserId { get; set; }
-
-        [Required]
         public ICollection<OrderItemCreateDto> Items { get; set; } = new List<OrderItemCreateDto>();
 
         [Required]

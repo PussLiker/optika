@@ -83,3 +83,5 @@ server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2
 /server/Optika.API/Optika.API/obj
 server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs
 /server/Optika.API/Optika.API/wwwroot/images
+/.idea
+/.idea/caches

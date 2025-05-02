@@ -28,7 +28,6 @@ namespace Optika.API.Data
                 entity.Property(p => p.Description).HasMaxLength(1000);
                 entity.Property(p => p.Price).HasColumnType("decimal(10,2)");
                 entity.Property(p => p.ImageUrl).HasMaxLength(2048);
-                entity.Property(p => p.IsActive).HasDefaultValue(true);
                 entity.Property(p => p.CreatedAt).HasDefaultValueSql("NOW()");
             });
 

@@ -12,7 +12,7 @@ using Optika.API.Data;
 namespace Optika.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250424143234_InitialCreate")]
+    [Migration("20250502221729_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -157,9 +157,7 @@ namespace Optika.API.Migrations
                         .HasColumnType("character varying(2048)");
 
                     b.Property<bool>("IsActive")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("boolean")
-                        .HasDefaultValue(true);
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -213,7 +211,7 @@ namespace Optika.API.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Optika.API.Entities.User", b =>
+            modelBuilder.Entity("User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -230,9 +228,6 @@ namespace Optika.API.Migrations
                         .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -263,7 +258,7 @@ namespace Optika.API.Migrations
 
             modelBuilder.Entity("Optika.API.Entities.Order", b =>
                 {
-                    b.HasOne("Optika.API.Entities.User", "User")
+                    b.HasOne("User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -318,7 +313,7 @@ namespace Optika.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Optika.API.Entities.User", "User")
+                    b.HasOne("User", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -351,7 +346,7 @@ namespace Optika.API.Migrations
                     b.Navigation("Reviews");
                 });
 
-            modelBuilder.Entity("Optika.API.Entities.User", b =>
+            modelBuilder.Entity("User", b =>
                 {
                     b.Navigation("Orders");
 
