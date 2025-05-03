@@ -31,7 +31,6 @@ builder.Services.AddScoped<IService<Products, ProductCreateDto>, GenericService<
 builder.Services.AddScoped<IService<Category, CategoryCreateDto>, GenericService<Category, CategoryCreateDto>>();
 builder.Services.AddScoped<IService<Brand, BrandCreateDto>, GenericService<Brand, BrandCreateDto>>();
 builder.Services.AddScoped<IService<User, UserCreateDto>, GenericService<User, UserCreateDto>>();
-builder.Services.AddScoped<IService<Review, ReviewCreateDto>, GenericService<Review, ReviewCreateDto>>();
 builder.Services.AddScoped<IService<OrderItem, OrderItemCreateDto>, GenericService<OrderItem, OrderItemCreateDto>>();
 builder.Services.AddScoped<IService<Order, OrderCreateDto>, GenericService<Order, OrderCreateDto>>();
 

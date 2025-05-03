@@ -23,5 +23,5 @@ public class User
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<Order> Orders { get; set; } = new List<Order>();
-    public ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public Cart Cart { get; set; } = null!;
 }

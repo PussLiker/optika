@@ -14,7 +14,6 @@ namespace Optika.API.Mapping
             TypeAdapterConfig<ProductCreateDto, Products>.NewConfig();
             TypeAdapterConfig<OrderCreateDto, Order>.NewConfig();
             TypeAdapterConfig<OrderItemCreateDto, OrderItem>.NewConfig();
-            TypeAdapterConfig<ReviewCreateDto, Review>.NewConfig();
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Optika.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83db9986f03ab9806c980ce2d05e668050c06f6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9917fde3fefc0ea90e3cf12496709643cef7ac52")]
 [assembly: System.Reflection.AssemblyProductAttribute("Optika.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Optika.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

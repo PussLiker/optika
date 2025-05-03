@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:optika/services/api_config.dart';
+import '../models/order_request.dart';
 import '../models/product.dart';
 import 'package:optika/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../services/order_service.dart';
 
 class CartScreen extends StatelessWidget {
   final Function onClearCart;
@@ -60,9 +63,48 @@ class CartScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16.0, 12, 16, 16),
             child: ElevatedButton(
-              onPressed: () {
-                // Логика оформления заказа
+              onPressed: () async {
+                final cartItems = cartProvider.items.values.toList();
+
+                if (cartItems.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Корзина пуста')),
+                  );
+                  return;
+                }
+
+                final orderRequest = OrderRequest(
+                  items: cartItems.map((product) =>
+                      OrderItemDto(
+                        productId: product.id,
+                        quantity: product.quantity,
+                      )
+                  ).toList(),
+                );
+
+                final success = await OrderService.placeOrder(orderRequest);
+
+                if (success) {
+                  cartProvider.clearCart();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Заказ успешно оформлен!'),
+                      backgroundColor: Colors.green,
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Ошибка при оформлении заказа'),
+                      backgroundColor: Colors.red,
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                }
               },
+
+
               child: Text('Оформить заказ'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 32),  // Увеличение горизонтального отступа

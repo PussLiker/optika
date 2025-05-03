@@ -28,6 +28,5 @@ namespace Optika.API.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

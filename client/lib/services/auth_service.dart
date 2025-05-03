@@ -16,7 +16,7 @@ class AuthService {
   }
   /// Регистрация нового пользователя
   static Future<Map<String, dynamic>> register(RegisterRequest request) async {
-    final url = Uri.parse('$baseUrl/api/auth/register');
+    final url = Uri.parse('$baseUrl/api/Auth/register');
 
     final response = await http.post(
       url,
@@ -39,7 +39,7 @@ class AuthService {
 
   /// Авторизация пользователя
   static Future<Map<String, dynamic>> login(LoginRequest request) async {
-    final url = Uri.parse('$baseUrl/api/auth/login');
+    final url = Uri.parse('$baseUrl/api/Auth/login');
 
     final response = await http.post(
       url,

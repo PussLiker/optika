@@ -1,23 +1,18 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:optika/models/order_create_dto.dart';
+import 'package:optika/models/order_request.dart';
+import 'api_config.dart';
 
 class OrderService {
-  final String baseUrl;
-  final String authToken;
+  static Future<bool> placeOrder(OrderRequest order) async {
+    final url = Uri.parse('${ApiConfig.baseUrl}/api/orders');
 
-  OrderService({required this.baseUrl, required this.authToken});
-
-  Future<bool> createOrder(OrderCreateDto order) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/api/Order'),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $authToken',
-      },
-      body: jsonEncode(order.toJson()),
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode(order.toJson()),
     );
 
-    return response.statusCode == 201;
+    return response.statusCode == 200 || response.statusCode == 201;
   }
 }

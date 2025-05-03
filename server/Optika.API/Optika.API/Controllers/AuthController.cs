@@ -8,6 +8,8 @@ using System.Text;
 using BCrypt.Net;
 using Optika.API.Data;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Crypto.Generators;
+using System.IdentityModel.Tokens;
 
 namespace Optika.API.Controllers
 {
@@ -37,7 +39,8 @@ namespace Optika.API.Controllers
                 LastName = dto.LastName,
                 Email = dto.Email,
                 Role = dto.Role,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+                Cart = new Cart()
             };
 
             _context.Users.Add(user);
@@ -86,7 +89,7 @@ namespace Optika.API.Controllers
                 new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
+            var key = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
