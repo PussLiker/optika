@@ -21,20 +21,20 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_isLogin ? 'Вход' : 'Регистрация')),
+      appBar: AppBar(
+        title: Text('Авторизация'),
+        centerTitle: true,
+      ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 36),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             Expanded(
-              child: _isLogin ? LoginForm() : RegisterForm(),
+              child: _isLogin
+                  ? LoginForm(onToggleForm: _toggleForm)
+                  : RegisterForm(onToggleForm: _toggleForm),
             ),
-            TextButton(
-              onPressed: _toggleForm,
-              child: Text(_isLogin
-                  ? 'Нет аккаунта? Зарегистрироваться'
-                  : 'Уже есть аккаунт? Войти'),
-            ),
+
           ],
         ),
       ),

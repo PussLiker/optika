@@ -1,3 +1,5 @@
+import 'package:optika/models/product.dart';
+
 class CartItem {
   final int productId;
   final String name;
@@ -15,18 +17,40 @@ class CartItem {
     this.brandName
   });
 
-  factory CartItem.fromJson(Map<String, dynamic> json) {
+  CartItem copyWith({
+    int? quantity,
+  }) {
     return CartItem(
-      productId: json['productId'],
-      name: json['name'],
-      imageUrl: json['imageUrl'] ?? '',
-      quantity: json['quantity'],
-      price: (json['price'] as num).toDouble(),
+      productId: productId,
+      name: name,
+      imageUrl: imageUrl,
+      quantity: quantity ?? this.quantity,
+      price: price,
+      brandName: brandName,
     );
   }
 
+  factory CartItem.fromProduct(Product product, {int quantity = 1}) {
+    return CartItem(
+      productId: product.id,
+      name: product.name,
+      imageUrl: product.imageUrl,
+      price: product.price,
+      brandName: product.brand?.name,
+      quantity: quantity,
+    );
+  }
+
+  CartItem.fromJson(Map<String, dynamic> json)
+      : productId = json['productId'],
+        name = json['name'],
+        price = json['price'].toDouble(),
+        imageUrl = json['imageUrl'],
+        brandName = json['brandName'],
+        quantity = json['quantity'];
+
   Map<String, dynamic> toJson() {
-    return {
+  return {
       'id': productId,
       'name': name,
       'imageUrl': imageUrl,

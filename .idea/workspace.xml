@@ -11,23 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="65c2d007-4357-4f63-b9cc-16a6eeea3e5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/models/cart_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/cart_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/models/order_request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/models/order_request.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/pages/cart_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/cart_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/pages/auth_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/auth_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/pages/catalog_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/catalog_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/pages/forms/login_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/forms/login_form.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/pages/forms/register_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/forms/register_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/pages/main_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/pages/main_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/providers/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/providers/cart_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/services/api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/services/api_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/lib/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/services/auth_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/lib/services/cart_services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/services/cart_services.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/lib/services/order_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/lib/services/order_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/.vs/Optika.API/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Controllers/CartController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/server/Optika.API/Optika.API/obj/Debug/net8.0/Optika.API.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

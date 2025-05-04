@@ -6,6 +6,9 @@ import 'package:optika/models/product.dart';
 import 'package:optika/services/api_config.dart';
 import 'package:provider/provider.dart';
 
+import '../services/auth_service.dart';
+import 'auth_screen.dart';
+
 enum SortOption { brandAsc, brandDesc, priceAsc, priceDesc }
 
 class CatalogScreen extends StatefulWidget {
@@ -52,6 +55,35 @@ class _CatalogScreenState extends State<CatalogScreen> {
     _scrollController.animateTo(0, duration: Duration(milliseconds: 500), curve: Curves.easeOut);
   }
 
+  Future<void> _logout(BuildContext context) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Выход'),
+        content: const Text('Вы уверены, что хотите выйти?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Отмена'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Выйти'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed == true) {
+      await AuthService.logout();
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const AuthPage()),
+        );
+      }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +104,10 @@ class _CatalogScreenState extends State<CatalogScreen> {
                 ),
               );
             },
+          ),
+          IconButton(
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: () => _logout(context),
           ),
         ],
       ),

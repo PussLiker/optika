@@ -20,15 +20,15 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (_) => CartProvider(),
-      child: MyApp(isLoggedIn: isLoggedIn),
+      child: MyApp(initialRoute: isLoggedIn ? '/catalog' : '/auth'),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final bool isLoggedIn;
+  final String initialRoute;
 
-  const MyApp({super.key, required this.isLoggedIn});
+  const MyApp({super.key, required this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +40,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: isLoggedIn ? CatalogScreen() : AuthPage(),
       debugShowCheckedModeBanner: false,
+      initialRoute: initialRoute,
+      routes: {
+        '/auth': (context) => const AuthPage(),
+        '/catalog': (context) => CatalogScreen()
+      }
     );
   }
 }
