@@ -39,25 +39,61 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<,>), typeof(GenericService<,>));
 
 
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = "Bearer";
+    options.DefaultChallengeScheme = "Bearer";
+})
+.AddJwtBearer("Bearer", options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
-            )
-        };
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+         Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+     ),
+
+        
+        NameClaimType = "sub", // иначе не найдёт пользователя
+        RoleClaimType = "role" // иначе авторизация по ролям не работает
+    };
+
+});
+
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Введите 'Bearer {ваш токен}'"
     });
 
-builder.Services.AddAuthorization();
-
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 
 var app = builder.Build();
@@ -78,17 +114,21 @@ app.UseStaticFiles();
 // регистрация маппинга
 MappingConfig.RegisterMappings();
 
-// HTTPS редирект (http → https)
+// HTTPS редирект
 app.UseHttpsRedirection();
 
-// Middleware авторизации (пока что бесполезно, если нет аутентификации)
+// Загрузка статических файлов
+app.UseStaticFiles();
+
+// Аутентификация → сначала
+app.UseAuthentication();
+
+// Авторизация → потом
 app.UseAuthorization();
 
-// Маршрутизация контроллеров
+// Роутинг
 app.MapControllers();
 
-app.UseAuthentication(); // обязательно до UseAuthorization
-app.UseAuthorization();
 
 // Регистрируем маппинги (например, AutoMapper)
 Optika.API.Mapping.MappingConfig.RegisterMappings();

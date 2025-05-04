@@ -4,36 +4,28 @@ import 'package:optika/services/api_config.dart';
 import '../models/cart_item.dart';
 
 class CartService {
-  final String baseUrl = ApiConfig.baseUrl; // замени на IP телефона/эмулятора
+  final String baseUrl = ApiConfig.baseUrl;
 
-  Future<List<CartItem>> getCart() async {
-    final response = await http.get(Uri.parse(baseUrl));
+  Future<List<CartItem>> getCartFromServer(String userId) async {
+    final response = await http.get(Uri.parse('$baseUrl/api/cart/$userId'));
 
     if (response.statusCode == 200) {
       final List data = json.decode(response.body);
       return data.map((item) => CartItem.fromJson(item)).toList();
     } else {
-      throw Exception('Не удалось загрузить корзину');
+      throw Exception('Failed to load cart from server');
     }
   }
 
-  Future<void> addToCart(int productId) async {
+  Future<void> saveCartToServer(List<CartItem> cartItems, String userId) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/add'),
+      Uri.parse('$baseUrl/api/cart/$userId'),
       headers: {'Content-Type': 'application/json'},
-      body: json.encode({'productId': productId}),
+      body: json.encode({'items': cartItems.map((e) => e.toJson()).toList()}),
     );
 
     if (response.statusCode != 200) {
-      throw Exception('Не удалось добавить в корзину');
-    }
-  }
-
-  Future<void> removeFromCart(int productId) async {
-    final response = await http.delete(Uri.parse('$baseUrl/$productId'));
-
-    if (response.statusCode != 200) {
-      throw Exception('Не удалось удалить из корзины');
+      throw Exception('Failed to save cart to server');
     }
   }
 }

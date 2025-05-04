@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:optika/models/auth/register_request.dart';
-import 'package:optika/models/auth/login_request.dart';
 import 'package:optika/services/auth_service.dart';
 import 'package:optika/pages/catalog_screen.dart';
 

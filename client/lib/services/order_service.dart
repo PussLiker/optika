@@ -5,7 +5,7 @@ import 'api_config.dart';
 
 class OrderService {
   static Future<bool> placeOrder(OrderRequest order) async {
-    final url = Uri.parse('${ApiConfig.baseUrl}/api/orders');
+    final url = Uri.parse('${ApiConfig.baseUrl}/api/Order');
 
     final response = await http.post(
       url,

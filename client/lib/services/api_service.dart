@@ -25,21 +25,19 @@ class ApiService {
 
     if (response.statusCode == 200) {
       List<dynamic> data = json.decode(response.body);
-
-      // Загружаем список брендов
       List<Brand> brands = await getBrands();
 
       return data.map((item) {
-        // Преобразуем каждый товар из JSON в объект Product
-        Product product = Product.fromJson(item);
-
-        // Находим бренд по ID
-        product.brand = brands.firstWhere((brand) => brand.id == product.brandId, orElse: () => Brand(id: 0, name: 'Неизвестный бренд'));
-
-        return product;
+        final int brandId = item['brandId'];
+        final Brand brand = brands.firstWhere(
+              (b) => b.id == brandId,
+          orElse: () => Brand(id: 0, name: 'Неизвестный бренд'),
+        );
+        return Product.fromJson(item, brand: brand);
       }).toList();
     } else {
       throw Exception('Failed to load products');
     }
   }
+
 }

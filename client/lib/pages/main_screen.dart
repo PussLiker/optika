@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/product.dart';
-import 'catalog_screen.dart';
-import 'cart_screen.dart';
+import 'package:optika/pages/catalog_screen.dart';
+import 'package:optika/pages/cart_screen.dart';
+import 'package:optika/pages/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -13,28 +13,24 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Product> _cart = [];
-  void _clearCart() {
-    setState(() {
-      _cart.clear();
-    });
-  }
+  final List<Widget> _pages = [
+    CatalogScreen(),
+    CartScreen(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    final screens = [
-      CatalogScreen(),
-      CartScreen(
-        onClearCart: _clearCart,
-      ),
-      const Center(child: Text('Профиль')), // Заглушка
-    ];
-
     return Scaffold(
-      body: screens[_selectedIndex],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: (index) => setState(() => _selectedIndex = index),
+        selectedItemColor: Color(0xFF045300),
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Каталог'),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Корзина'),

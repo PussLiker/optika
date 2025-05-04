@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:optika/services/api_config.dart';
-import '../models/order_request.dart';
-import '../models/product.dart';
 import 'package:optika/providers/cart_provider.dart';
+import 'package:optika/models/cart_item.dart';
 import 'package:provider/provider.dart';
-
 import '../services/order_service.dart';
+import '../models/order_request.dart';
+import '../services/api_config.dart';
 
 class CartScreen extends StatelessWidget {
-  final Function onClearCart;
-
-  const CartScreen({super.key, required this.onClearCart});
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,29 +15,29 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Корзина', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
-        backgroundColor: Color(0xFF045300),
+        title: const Text(
+          'Корзина',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        ),
+        backgroundColor: const Color(0xFF045300),
         foregroundColor: Colors.white,
         actions: [
           IconButton(
-            icon: Icon(Icons.delete_forever),
-            onPressed: () {
-              _showClearCartConfirmation(context, cartProvider);  // Подтверждение очистки
-
-            },
+            icon: const Icon(Icons.delete_forever),
+            onPressed: () => _showClearCartConfirmation(context, cartProvider),
           ),
         ],
       ),
       body: cartProvider.items.isEmpty
-          ? Center(child: Text('Ваша корзина пуста'))
+          ? const Center(child: Text('Ваша корзина пуста'))
           : Column(
         children: [
           Expanded(
             child: ListView.builder(
               itemCount: cartProvider.items.length,
               itemBuilder: (context, index) {
-                final product = cartProvider.items.values.toList()[index];
-                return _buildCartItem(product, cartProvider);
+                final item = cartProvider.items.values.toList()[index];
+                return _buildCartItem(item, cartProvider);
               },
             ),
           ),
@@ -49,13 +46,13 @@ class CartScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Общая стоимость:',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '${cartProvider.totalPrice.toStringAsFixed(2)} руб',
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ],
             ),
@@ -64,166 +61,133 @@ class CartScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16.0, 12, 16, 16),
             child: ElevatedButton(
               onPressed: () async {
-                final cartItems = cartProvider.items.values.toList();
-
-                if (cartItems.isEmpty) {
+                if (cartProvider.items.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Корзина пуста')),
+                    const SnackBar(content: Text('Корзина пуста')),
                   );
                   return;
                 }
 
                 final orderRequest = OrderRequest(
-                  items: cartItems.map((product) =>
-                      OrderItemDto(
-                        productId: product.id,
-                        quantity: product.quantity,
-                      )
-                  ).toList(),
+                  items: cartProvider.items.values.map((item) {
+                    return OrderItemDto(
+                      productId: item.productId,
+                      quantity: item.quantity,
+                      price: cartProvider.totalPrice
+                    );
+                  }).toList(),
                 );
 
                 final success = await OrderService.placeOrder(orderRequest);
 
-                if (success) {
-                  cartProvider.clearCart();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Заказ успешно оформлен!'),
-                      backgroundColor: Colors.green,
-                      behavior: SnackBarBehavior.floating,
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      success ? 'Заказ успешно оформлен!' : 'Ошибка при оформлении заказа',
                     ),
-                  );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Ошибка при оформлении заказа'),
-                      backgroundColor: Colors.red,
-                      behavior: SnackBarBehavior.floating,
-                    ),
-                  );
-                }
+                    backgroundColor: success ? Colors.green : Colors.red,
+                  ),
+                );
+
+                if (success) cartProvider.clearCart();
               },
-
-
-              child: Text('Оформить заказ'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 14, horizontal: 32),  // Увеличение горизонтального отступа
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 32),
+                textStyle: const TextStyle(fontSize: 16),
               ),
+              child: const Text('Оформить заказ'),
             ),
           ),
-
         ],
       ),
     );
   }
 
-  Widget _buildCartItem(Product product, CartProvider cartProvider) {
+  Widget _buildCartItem(CartItem item, CartProvider provider) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.green[50],
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
+        boxShadow: const [
+          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
-      height: 160, // Чтобы помещалось 3–5 карточек
+      height: 160,
       child: Row(
         children: [
-          // Левый столбец: изображение
           Container(
             width: 150,
             height: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.grey[200],
-              image: product.imageUrl != null
+              image: (item.imageUrl != null && item.imageUrl!.isNotEmpty)
                   ? DecorationImage(
-                image: NetworkImage('${ApiConfig.baseUrl}${product.imageUrl}'),
+                image: NetworkImage('${ApiConfig.baseUrl}${item.imageUrl}'),
                 fit: BoxFit.cover,
               )
                   : null,
             ),
-            child: product.imageUrl == null
-                ? Icon(Icons.image_not_supported, size: 40)
+            child: (item.imageUrl == null || item.imageUrl!.isEmpty)
+                ? const Icon(Icons.image_not_supported, size: 40)
                 : null,
           ),
-
-          SizedBox(width: 12),
-
-          // Правый столбец: текст и кнопки
+          const SizedBox(width: 12),
           Expanded(
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Верх: текстовая информация
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.brand?.name ?? '',
-                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      product.name,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      '${product.price.toStringAsFixed(2)} руб',
-                      style: TextStyle(fontSize: 15),
-                    ),
-                  ]
+                Text(
+                  item.brandName ?? 'Неизвестно',
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  item.name, // ← теперь это вторая строка
+                  style: const TextStyle(fontSize: 14),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  '${item.price.toStringAsFixed(2)} руб',
+                  style: const TextStyle(fontSize: 15),
                 ),
 
-                // Низ: кнопки
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Количество
                     Row(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           iconSize: 20,
                           padding: EdgeInsets.zero,
                           onPressed: () {
-                            if (product.quantity > 1) {
-                              product.quantity--;
-                              cartProvider.notifyListeners();
+                            if (item.quantity > 1) {
+                              provider.updateQuantity(item.productId, item.quantity - 1);
                             } else {
-                              cartProvider.removeFromCart(product.id);
+                              provider.removeFromCart(item.productId);
                             }
                           },
                         ),
-                        Text('${product.quantity}', style: TextStyle(fontSize: 16)),
+                        Text('${item.quantity}', style: const TextStyle(fontSize: 16)),
                         IconButton(
-                          icon: Icon(Icons.add),
+                          icon: const Icon(Icons.add),
                           iconSize: 20,
                           padding: EdgeInsets.zero,
                           onPressed: () {
-                            product.quantity++;
-                            cartProvider.notifyListeners();
+                            provider.updateQuantity(item.productId, item.quantity + 1);
                           },
                         ),
                       ],
                     ),
-
-                    // Удалить
                     IconButton(
-                      icon: Icon(Icons.delete, color: Colors.redAccent),
-                      onPressed: () => cartProvider.removeFromCart(product.id),
+                      icon: const Icon(Icons.delete, color: Colors.redAccent),
+                      onPressed: () => provider.removeFromCart(item.productId),
                       iconSize: 24,
                       padding: EdgeInsets.zero,
                     ),
@@ -237,36 +201,23 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-
-
-  void _showClearCartConfirmation(BuildContext context, CartProvider cartProvider) {
+  void _showClearCartConfirmation(BuildContext context, CartProvider provider) {
     showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Подтвердите очистку корзины'),
-          content: Text('Вы уверены, что хотите очистить корзину?'),
-          actionsPadding: EdgeInsets.only(right: 14, bottom: 12),
-          actions: [
-
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('Отмена'),
-            ),
-            TextButton(
-              onPressed: () {
-                cartProvider.clearCart();
-                Navigator.pop(context);
-              },
-              child: Text('Очистить'),
-            ),
-
-          ],
-        );
-      },
+      builder: (ctx) => AlertDialog(
+        title: const Text('Подтвердите очистку корзины'),
+        content: const Text('Вы уверены, что хотите очистить корзину?'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Отмена')),
+          TextButton(
+            onPressed: () {
+              provider.clearCart();
+              Navigator.pop(ctx);
+            },
+            child: const Text('Очистить'),
+          ),
+        ],
+      ),
     );
   }
-
 }

@@ -24,6 +24,14 @@ public class CartController : ControllerBase
     {
         int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
+        // Предзагрузка продукта — важно для избежания ленивой загрузки позже
+        var product = await _context.Products
+            .AsNoTracking()
+            .FirstOrDefaultAsync(p => p.Id == dto.ProductId);
+
+        if (product == null)
+            return NotFound("Товар не найден");
+
         var cart = await _context.Carts
             .Include(c => c.Items)
             .FirstOrDefaultAsync(c => c.UserId == userId);
@@ -32,8 +40,8 @@ public class CartController : ControllerBase
         {
             cart = new Cart { UserId = userId };
             _context.Carts.Add(cart);
+            await _context.SaveChangesAsync(); // теперь безопасно, потому что нет других активных команд
         }
-
 
         var item = cart.Items.FirstOrDefault(i => i.ProductId == dto.ProductId);
         if (item != null)
@@ -42,16 +50,18 @@ public class CartController : ControllerBase
         }
         else
         {
-            cart.Items.Add(new CartItem
+            _context.CartItems.Add(new CartItem
             {
                 ProductId = dto.ProductId,
-                Quantity = dto.Quantity
+                Quantity = dto.Quantity,
+                CartId = cart.Id
             });
         }
 
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(); // второй безопасный вызов
         return Ok("Добавлено в корзину");
     }
+
 
     [HttpGet]
     public async Task<IActionResult> GetCart()

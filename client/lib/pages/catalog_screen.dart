@@ -6,12 +6,7 @@ import 'package:optika/models/product.dart';
 import 'package:optika/services/api_config.dart';
 import 'package:provider/provider.dart';
 
-enum SortOption {
-  brandAsc,
-  brandDesc,
-  priceAsc,
-  priceDesc,
-}
+enum SortOption { brandAsc, brandDesc, priceAsc, priceDesc }
 
 class CatalogScreen extends StatefulWidget {
   @override
@@ -22,19 +17,17 @@ class _CatalogScreenState extends State<CatalogScreen> {
   final ApiService apiService = ApiService();
   late Future<List<Product>> _productsFuture;
   final ScrollController _scrollController = ScrollController();
-
   SortOption? _selectedSort = SortOption.priceAsc;
 
   @override
   void initState() {
     super.initState();
-    _productsFuture = apiService.getProducts()
-        .then((list) => list.where((p) => p.imageUrl != null && p.imageUrl!.isNotEmpty).toList());
+    _productsFuture = apiService.getProducts().then(
+          (list) => list.where((p) => p.imageUrl != null && p.imageUrl!.isNotEmpty).toList(),
+    );
   }
 
   List<Product> _sortedProducts(List<Product> items) {
-    if (_selectedSort == null) return items;
-
     final sorted = List<Product>.from(items);
     switch (_selectedSort) {
       case SortOption.brandAsc:
@@ -54,12 +47,9 @@ class _CatalogScreenState extends State<CatalogScreen> {
     }
     return sorted;
   }
+
   void _scrollToTop() {
-    _scrollController.animateTo(
-      0,
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeOut,
-    );
+    _scrollController.animateTo(0, duration: Duration(milliseconds: 500), curve: Curves.easeOut);
   }
 
   @override
@@ -75,17 +65,10 @@ class _CatalogScreenState extends State<CatalogScreen> {
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              // Логика открытия корзины
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => CartScreen(
-                    onClearCart: () {
-                      setState(() {
-                        Provider.of<CartProvider>(context, listen: false).clearCart();
-                      });
-                    },
-                  ),
+                  builder: (_) => CartScreen(                  ),
                 ),
               );
             },
@@ -99,7 +82,6 @@ class _CatalogScreenState extends State<CatalogScreen> {
             return Center(child: CircularProgressIndicator());
           if (snapshot.hasError)
             return Center(child: Text('Ошибка загрузки товаров'));
-
           final products = snapshot.data!;
           if (products.isEmpty)
             return Center(child: Text('Нет доступных товаров'));
@@ -107,14 +89,12 @@ class _CatalogScreenState extends State<CatalogScreen> {
           return SingleChildScrollView(
             controller: _scrollController,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildCategorySection('Оправы', products.where((p) => p.categoryId == 1).toList()),
                 Divider(),
                 _buildCategorySection('Солнечные очки', products.where((p) => p.categoryId == 2).toList()),
                 Divider(),
                 _buildCategorySection('Линзы', products.where((p) => p.categoryId == 3).toList()),
-                Divider(),
               ],
             ),
           );
@@ -140,37 +120,19 @@ class _CatalogScreenState extends State<CatalogScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
+                Text(title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                 DropdownButton<SortOption>(
                   value: _selectedSort,
                   underline: SizedBox(),
                   style: TextStyle(fontSize: 14, color: Colors.black),
                   items: [
-                    DropdownMenuItem(
-                      value: SortOption.brandAsc,
-                      child: Text('Бренд ▲'),
-                    ),
-                    DropdownMenuItem(
-                      value: SortOption.brandDesc,
-                      child: Text('Бренд ▼'),
-                    ),
-                    DropdownMenuItem(
-                      value: SortOption.priceAsc,
-                      child: Text('Цена ▲'),
-                    ),
-                    DropdownMenuItem(
-                      value: SortOption.priceDesc,
-                      child: Text('Цена ▼'),
-                    ),
+                    DropdownMenuItem(value: SortOption.brandAsc, child: Text('Бренд ▲')),
+                    DropdownMenuItem(value: SortOption.brandDesc, child: Text('Бренд ▼')),
+                    DropdownMenuItem(value: SortOption.priceAsc, child: Text('Цена ▲')),
+                    DropdownMenuItem(value: SortOption.priceDesc, child: Text('Цена ▼')),
                   ],
-
-                  onChanged: (SortOption? newValue) {
-                    setState(() {
-                      _selectedSort = newValue;
-                    });
+                  onChanged: (newValue) {
+                    setState(() => _selectedSort = newValue);
                   },
                 ),
               ],
@@ -195,7 +157,6 @@ class _CatalogScreenState extends State<CatalogScreen> {
     );
   }
 
-
   Widget _buildProductCard(Product product) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -214,14 +175,12 @@ class _CatalogScreenState extends State<CatalogScreen> {
                 fit: BoxFit.cover,
                 errorBuilder: (context, _, __) => Container(
                   height: 108,
-                  width: double.infinity,
                   color: Colors.grey[200],
                   child: Icon(Icons.image_not_supported, size: 50, color: Colors.grey),
                 ),
               )
                   : Container(
                 height: 108,
-                width: double.infinity,
                 color: Colors.grey[200],
                 child: Icon(Icons.image_not_supported, size: 50, color: Colors.grey),
               ),
@@ -232,27 +191,21 @@ class _CatalogScreenState extends State<CatalogScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  product.brand?.name ?? 'Неизвестный бренд',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                ),
+                Text(product.brand?.name ?? 'Неизвестный бренд',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center),
                 SizedBox(height: 4),
-                Text(
-                  product.name,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 14),
-                  textAlign: TextAlign.center,
-                ),
+                Text(product.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 14),
+                    textAlign: TextAlign.center),
                 SizedBox(height: 4),
-                Text(
-                  '${product.price.toStringAsFixed(2)} руб',
-                  style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
+                Text('${product.price.toStringAsFixed(2)} руб',
+                    style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center),
               ],
             ),
           ),
@@ -262,20 +215,25 @@ class _CatalogScreenState extends State<CatalogScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Provider.of<CartProvider>(context, listen: false).addToCart(product);
+                  Provider.of<CartProvider>(context, listen: false).addProduct(product);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('${product.name} добавлен в корзину'), duration: Duration(milliseconds: 150)),
+                    SnackBar(
+                      content: Text('${product.name} добавлен в корзину'),
+                      duration: Duration(milliseconds: 150),
+                      action: SnackBarAction(
+                        label: 'Отмена',
+                        onPressed: () {
+                          Provider.of<CartProvider>(context, listen: false).removeFromCart(product.id);
+                        },
+                      ),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF31A82A),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
-                child: Text(
-                  'В корзину',
-                  style: TextStyle(color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
+                child: Text('В корзину', style: TextStyle(color: Colors.white)),
               ),
             ),
           ),
