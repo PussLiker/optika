@@ -1,13 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:optika/providers/cart_provider.dart';
 import 'package:optika/models/cart_item.dart';
+import 'package:optika/services/auth_service.dart';
 import 'package:provider/provider.dart';
 import '../services/order_service.dart';
 import '../models/order_request.dart';
 import '../services/api_config.dart';
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+class CartScreen extends StatefulWidget {
+  final int userId;
+
+  const CartScreen({super.key, required this.userId});
+
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCart();
+  }
+
+  Future<void> _loadCart() async {
+    try {
+      await Provider.of<CartProvider>(context, listen: false).loadCart(widget.userId);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Не удалось загрузить корзину с сервера')),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +58,17 @@ class CartScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: cartProvider.items.isEmpty
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : cartProvider.cartItems.isEmpty
           ? const Center(child: Text('Ваша корзина пуста'))
           : Column(
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: cartProvider.items.length,
+              itemCount: cartProvider.cartItems.length,
               itemBuilder: (context, index) {
-                final item = cartProvider.items.values.toList()[index];
+                final item = cartProvider.cartItems.values.elementAt(index);
                 return _buildCartItem(item, cartProvider);
               },
             ),
@@ -61,7 +93,7 @@ class CartScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16.0, 12, 16, 16),
             child: ElevatedButton(
               onPressed: () async {
-                if (cartProvider.items.isEmpty) {
+                if (cartProvider.cartItems.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Корзина пуста')),
                   );
@@ -69,11 +101,11 @@ class CartScreen extends StatelessWidget {
                 }
 
                 final orderRequest = OrderRequest(
-                  items: cartProvider.items.values.map((item) {
+                  items: cartProvider.cartItems.values.map((item) {
                     return OrderItemDto(
                       productId: item.productId,
                       quantity: item.quantity,
-                      price: cartProvider.totalPrice
+                      price: item.price, // фиксированная цена товара!
                     );
                   }).toList(),
                 );
@@ -83,13 +115,15 @@ class CartScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      success ? 'Заказ успешно оформлен!' : 'Ошибка при оформлении заказа',
+                      success
+                          ? 'Заказ успешно оформлен!'
+                          : 'Ошибка при оформлении заказа',
                     ),
                     backgroundColor: success ? Colors.green : Colors.red,
                   ),
                 );
 
-                if (success) cartProvider.clearCart();
+                if (success) cartProvider.clearCart(widget.userId);
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 32),
@@ -147,16 +181,15 @@ class CartScreen extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  item.name, // ← теперь это вторая строка
+                  item.name,
                   style: const TextStyle(fontSize: 14),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   '${item.price.toStringAsFixed(2)} руб',
-                  style: const TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -211,7 +244,7 @@ class CartScreen extends StatelessWidget {
           TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Отмена')),
           TextButton(
             onPressed: () {
-              provider.clearCart();
+              provider.clearCart(widget.userId);
               Navigator.pop(ctx);
             },
             child: const Text('Очистить'),

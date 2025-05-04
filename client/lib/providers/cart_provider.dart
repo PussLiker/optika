@@ -1,135 +1,105 @@
 import 'package:flutter/material.dart';
-import 'package:optika/models/cart_item.dart';
-import 'package:optika/models/product.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../models/cart_item.dart';
 import '../services/cart_services.dart';
 
 class CartProvider with ChangeNotifier {
-  final Map<int, CartItem> _items = {};
-  final CartService _cartService = CartService();
+  Map<int, CartItem> _cartItems = {};
 
-  Map<int, CartItem> get items => Map.unmodifiable(_items);
+  // Получить все товары в корзине
+  Map<int, CartItem> get cartItems => _cartItems;
 
-  double get totalPrice =>
-      _items.values.fold(0.0, (sum, item) => sum + item.price * item.quantity);
+  // Подсчёт всех товаров
+  int get totalItems => _cartItems.length;
 
-  Future<void> _syncWithServer() async {
+  // Общая стоимость корзины
+  double get totalPrice {
+    double total = 0.0;
+    for (var item in _cartItems.values) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  }
+
+  // Метод для загрузки корзины с сервера
+  Future<void> loadCart(int userId) async {
     try {
-      final userId = await _getUserId();
-      if (userId == null) throw Exception('User not authenticated');
-
-      final serverItems = await _cartService.getCartFromServer(userId);
-      _items.clear();
-      for (var item in serverItems) {
-        _items[item.productId] = item;
-      }
+      final cartService = CartService();
+      final items = await cartService.getCartFromServer();
+      _cartItems = {
+        for (var item in items) item.productId: item
+      }; // Заполняем корзину
       notifyListeners();
     } catch (e) {
-      print('Sync error: $e');
-      rethrow;
+      // Обработка ошибок
     }
   }
 
-  Future<int?> _getUserId() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt('userId');
-  }
-
-  Future<void> loadCart() async {
-    await _syncWithServer();
-  }
-
-  Future<void> addProduct(Product product) async {
+  // Удалить товар из корзины
+  Future<void> removeFromCart(int productId) async {
     try {
-      final userId = await _getUserId();
-      if (userId == null) throw Exception('User not authenticated');
+      final cartService = CartService();
+      await cartService.removeFromCart(productId: productId); // Удаляем товар с сервера
+      _cartItems.remove(productId); // Удаляем товар локально
+      notifyListeners();
+    } catch (e) {
+      // Обработка ошибок
+    }
+  }
 
-      // 1. Добавляем на сервер
-      await _cartService.addToCart(
-          userId: userId,
-          productId: product.id,
-          quantity: 1
+  // Очистить корзину
+  Future<void> clearCart(int userId) async {
+    try {
+      final cartService = CartService();
+      await cartService.clearCart(); // Очищаем корзину на сервере
+      _cartItems.clear(); // Очищаем локальную корзину
+      notifyListeners();
+    } catch (e) {
+      // Обработка ошибок
+    }
+  }
+
+  // Добавление или увеличение количества товара
+  Future<void> addProduct(CartItem item) async {
+    try {
+      final cartService = CartService();
+      await cartService.addToCart(
+        productId: item.productId,
+        quantity: item.quantity,
       );
 
-      // 2. Обновляем локальное состояние
-      if (_items.containsKey(product.id)) {
-        _items.update(
-            product.id,
-                (item) => item.copyWith(quantity: item.quantity + 1)
-        );
+      if (_cartItems.containsKey(item.productId)) {
+        _cartItems[item.productId]!.quantity += item.quantity;
       } else {
-        _items[product.id] = CartItem.fromProduct(product);
+        _cartItems[item.productId] = item;
       }
 
       notifyListeners();
     } catch (e) {
-      print('Add to cart error: $e');
-      rethrow;
+      debugPrint('Ошибка при добавлении в корзину: $e');
     }
   }
 
-  Future<void> updateQuantity(int productId, int newQuantity) async {
+
+  // Обновление количества товара
+  Future<void> updateQuantity(int productId, int quantity) async {
     try {
-      final userId = await _getUserId();
-      if (userId == null) throw Exception('User not authenticated');
-
-      if (newQuantity <= 0) {
-        await removeFromCart(productId);
-        return;
-      }
-
-      // 1. Обновляем на сервере
-      await _cartService.updateCartItem(
-          userId: userId,
-          productId: productId,
-          quantity: newQuantity
+      final cartService = CartService();
+      await cartService.updateCartItem(
+        productId: productId,
+        quantity: quantity,
       );
 
-      // 2. Локальное обновление
-      if (_items.containsKey(productId)) {
-        _items.update(
-            productId,
-                (item) => item.copyWith(quantity: newQuantity)
-        );
+      if (_cartItems.containsKey(productId)) {
+        if (quantity <= 0) {
+          await removeFromCart(productId);
+        } else {
+          _cartItems[productId]!.quantity = quantity;
+        }
         notifyListeners();
       }
     } catch (e) {
-      print('Update quantity error: $e');
-      rethrow;
+      debugPrint('Ошибка при обновлении количества: $e');
     }
   }
 
-  Future<void> removeFromCart(int productId) async {
-    try {
-      final userId = await _getUserId();
-      if (userId == null) throw Exception('User not authenticated');
-
-      // 1. Удаляем с сервера
-      await _cartService.removeFromCart(
-          userId: userId,
-          productId: productId
-      );
-
-      // 2. Локальное удаление
-      _items.remove(productId);
-      notifyListeners();
-    } catch (e) {
-      print('Remove from cart error: $e');
-      rethrow;
-    }
-  }
-
-  Future<void> clearCart() async {
-    try {
-      final userId = await _getUserId();
-      if (userId == null) throw Exception('User not authenticated');
-
-      await _cartService.clearCart(userId);
-      _items.clear();
-      notifyListeners();
-    } catch (e) {
-      print('Clear cart error: $e');
-      rethrow;
-    }
-  }
 }

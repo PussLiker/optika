@@ -13,10 +13,12 @@ class CartService {
   Future<String> _getUserToken() async {
     return await _storage.read(key: 'auth_token') ?? '';
   }
-  Future<List<CartItem>> getCartFromServer(int userId) async {
+
+  // Получить корзину пользователя с сервера
+  Future<List<CartItem>> getCartFromServer() async {
     final response = await http.get(
       Uri.parse('$baseUrl/$_cartEndpoint'),
-      headers: _buildHeaders(userId),
+      headers: await _buildHeaders(),
     );
 
     if (response.statusCode == 200) {
@@ -26,37 +28,40 @@ class CartService {
       throw Exception('Failed to load cart. Status: ${response.statusCode}');
     }
   }
-
   Future<void> addToCart({
-    required int userId,
     required int productId,
     required int quantity,
   }) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/$_cartEndpoint/add'),
-      headers: _buildHeaders(userId),
-      body: json.encode({
-        'ProductId': productId,
-        'Quantity': quantity,
+      Uri.parse('$baseUrl/api/cart/add'),
+      headers: await _buildHeaders(),
+      body: jsonEncode({
+        'productId': productId,
+        'quantity': quantity,
       }),
     );
 
+    print('Ответ от сервера: ${response.statusCode}');
+    print('Тело ответа: ${response.body}');
     if (response.statusCode != 200) {
-      throw Exception('Failed to add to cart. Status: ${response.statusCode}');
+      throw Exception('Не удалось добавить товар в корзину');
     }
   }
 
+
+
+
   Future<void> updateCartItem({
-    required int userId,
     required int productId,
     required int quantity,
   }) async {
+    final headers = await _buildHeaders();
     final response = await http.put(
-      Uri.parse('$baseUrl/$_cartEndpoint/update'),
-      headers: _buildHeaders(userId),
+      Uri.parse('$baseUrl/api/cart/update'),
+      headers: headers,
       body: json.encode({
-        'ProductId': productId,
-        'Quantity': quantity,
+        'productId': productId,
+        'quantity': quantity,
       }),
     );
 
@@ -65,13 +70,15 @@ class CartService {
     }
   }
 
+
   Future<void> removeFromCart({
-    required int userId,
+
     required int productId,
   }) async {
+    final headers = await _buildHeaders();
     final response = await http.delete(
       Uri.parse('$baseUrl/$_cartEndpoint/$productId'),
-      headers: _buildHeaders(userId),
+      headers: headers,
     );
 
     if (response.statusCode != 200) {
@@ -79,10 +86,11 @@ class CartService {
     }
   }
 
-  Future<void> clearCart(int userId) async {
+  Future<void> clearCart() async {
+    final headers = await _buildHeaders();
     final response = await http.delete(
-      Uri.parse('$baseUrl/$_cartEndpoint/clear'),
-      headers: _buildHeaders(userId),
+      Uri.parse('$baseUrl/$_cartEndpoint'),
+      headers: headers,
     );
 
     if (response.statusCode != 200) {
@@ -90,10 +98,12 @@ class CartService {
     }
   }
 
-  Map<String, String> _buildHeaders(int userId) {
+  Future<Map<String, String>> _buildHeaders() async {
+    final token = await _storage.read(key: 'auth_token') ?? '';
     return {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${_getUserToken()}', //  JWT
+      'Authorization': 'Bearer $token',
     };
   }
+
 }
